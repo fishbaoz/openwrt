@@ -38,6 +38,11 @@ define U-Boot/mx6sabresd
   NAME:=SABRE i.MX6Quad board
 endef
 
+define U-Boot/mx6sxsabresd
+  BUILD_TARGET:=imx6sx
+  NAME:=SABRE i.MX6SoloX board
+endef
+
 define U-Boot/nitrogen6dl
   NAME:=Nitrogen6x i.MX6Dual-Lite 1GB board
 endef
@@ -71,6 +76,7 @@ UBOOT_TARGETS := \
 	apalis_imx6 \
 	mx6cuboxi \
 	mx6sabresd \
+	mx6sxsabresd \
 	nitrogen6dl \
 	nitrogen6dl2g \
 	nitrogen6q \

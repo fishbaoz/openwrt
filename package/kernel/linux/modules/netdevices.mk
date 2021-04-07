@@ -702,6 +702,22 @@ endef
 
 $(eval $(call KernelPackage,ixgbevf))
 
+define KernelPackage/amd-xgbe
+  SUBMENU:=$(NETWORK_DEVICES_MENU)
+  TITLE:=AMD Ethernet support
+  DEPENDS:=@PCI_SUPPORT +kmod-lib-crc32c +kmod-ptp +kmod-libphy
+  KCONFIG:=CONFIG_AMD_XGBE
+  FILES:=$(LINUX_DIR)/drivers/net/ethernet/amd/xgbe/amd-xgbe.ko
+  AUTOLOAD:=$(call AutoLoad,35,amd-xgbe)
+endef
+
+define KernelPackage/amd-xgbe/description
+ Kernel modules for AMD Ethernet support.
+endef
+
+$(eval $(call KernelPackage,amd-xgbe))
+
+
 
 define KernelPackage/i40e
   SUBMENU:=$(NETWORK_DEVICES_MENU)
